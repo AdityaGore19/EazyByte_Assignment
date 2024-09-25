@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card text-center mt-5 mx-auto" style="max-width: 600px;">
+    <div class="card-header bg-danger text-white">
+        <h2>Hi {{ user.get_username }}!</h2>
+    </div>
+    <div class="card-body">
+        <p class="card-text">Welcome to this brilliant example of an authentication app with cutting-edge features.</p>
+        <p>Wanna try them?</p>
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <a href="{% url 'profile' %}">Profile</a>
+            </li>
+            <li class="list-group-item">
+                <a href="{% url 'password_reset' %}">Change Password</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-footer text-muted bg-danger text-white">
+        <a href="{% url 'login' %}" class="text-white">Log Out</a>
+    </div>
+</div>
+{% endblock content %}
